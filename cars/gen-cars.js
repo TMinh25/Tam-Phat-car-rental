@@ -199,7 +199,7 @@ function generateHTMLFile() {
 	for (let i = 0; i < carData.length; i++) {
 		const car = carData[i];
 
-		fs.readFile("./cars/car-single.html", "utf8", (err, data) => {
+		fs.readFile("./car-single.html", "utf8", (err, data) => {
 			if (err) {
 				console.error("Error reading file:", err);
 				return;
@@ -215,7 +215,7 @@ function generateHTMLFile() {
 
 			// Generate new HTML file
 			const fileName = String(car.name).toLowerCase().replace(/\s/, "-");
-			fs.writeFile(`cars/${fileName}.html`, htmlTemplate, "utf8", (err) => {
+			fs.writeFile(`${fileName}.html`, htmlTemplate, "utf8", (err) => {
 				if (err) {
 					console.error("Error creating file:", err);
 					return;
